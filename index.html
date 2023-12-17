@@ -15,64 +15,17 @@
     <script src="gesture-handler-tartaric.js"></script>
     </head>
     <body>
-        <a-scene 
-            arjs="sourceWidth: 1024; sourceHeight: 776; displayWidth: 1024; displayHeight: 776;"
-            embedded=""
-            renderer="logarithmicDepthBuffer: true;"
-            vr-mode-ui="enabled: false"
-            loading-screen="enabled: false"
-            id="scene"
-            inspector=""
-            keyboard-shortcuts=""
-            screenshot=""
-            gesture-detector=""
-            device-orientation-permission-ui="">
-        <!-- a-marker
-            preset="hiro"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"
-            id="markerA"
-            smooth="true"
-            smoothcount="50"
-            smoothtolerance="0.1"
-            smooththreshold="1000"
-            material=""
-            arjs-anchor=""
-            arjs-hit-testing="" -->
-        <a-assets>
-            <a-asset-item id="RR" src="https://storage.googleapis.com/rez-test/b.glb"></a-asset-item>
-        </a-assets>
-        <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="../marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA">
-            <a-sky id="sky1"
-                color="#C0C0C0"
-                opacity="0.95"
-                material=""
-                geometry=""
-                scale="">
-            </a-sky>
-            <a-entity
-                id="RR"
-                position="0 0 0"
-                rotation="0 0 0"
-                scale="0.5 0.5 0.5"
-                gltf-model="#RR"
-                class="clickable"
-                gesture-handler-tartaric="">
-            </a-entity>
-            </a-entity>
-        </a-marker>
-        <a-entity
-            camera>
-        </a-entity>
+        <a-scene gltf-model="meshoptDecoderPath: https://raw.githubusercontent.com/zeux/meshoptimizer/master/js/meshopt_decoder.js;" embedded="" tracking-pattern="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; patternRatio: 0.65;" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false" renderer="colorManagement: true; physicallyCorrectLights: false; logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector="" id="scene" inspector="" keyboard-shortcuts="" screenshot="">
+            <a-assets>
+              <a-asset-item id="foodItem" src="https://storage.googleapis.com/rez-test/b.glb">
+              </a-asset-item>
+            </a-assets>
+            <a-marker preset="custom" type="pattern" smooth="true" smoothcount="2" smoothtolerance="0.01" smooththreshold="2" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA" material="" arjs-anchor="" arjs-hit-testing="">
+              <a-entity id="bowser-model" gltf-model="#foodItem" position="0 0 0" scale="1 1 1" class="clickable" animation-mixer="" gesture-handler=""></a-entity>
+            </a-marker>
+            <a-entity id="camera" camera look-controls wasd-controls position="0 0.2 0.4"></a-entity>
+                <canvas class="a-canvas" data-aframe-canvas="true" data-engine="three.js r147"></canvas>
+            <a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity><a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
         </a-scene>
-        </body>
+    </body>
 </html>
