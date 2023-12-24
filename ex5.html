@@ -23,7 +23,7 @@
   </button>
 
   <div id="ar-prompt">
-    <img src="slide-left-right-icon.png">
+    <img src="https://madarez.github.io/slide-left-right-icon.png">
   </div>
 
   <button id="ar-failure">
@@ -32,11 +32,11 @@
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'Chefs-Nigiri-Tray')" style="background-image: url('Chefs-Nigiri-Tray.webp');">
+      <button class="slide selected" onclick="switchSrc(this, 'Chefs-Nigiri-Tray')" style="background-image: url('https://madarez.github.io/Chefs-Nigiri-Tray.webp');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Tonkotsu-Original-Ramen')" style="background-image: url('Tonkotsu-Original-Ramen.webp');">
+      </button><button class="slide" onclick="switchSrc(this, 'Tonkotsu-Original-Ramen')" style="background-image: url('https://madarez.github.io/Tonkotsu-Original-Ramen.webp');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Curry-Ramen')" style="background-image: url('Curry-Ramen.webp');">  
+      </button><button class="slide" onclick="switchSrc(this, 'Curry-Ramen')" style="background-image: url('https://madarez.github.io/Curry-Ramen.webp');">  
     </button></div>
   </div>
 </model-viewer>
@@ -45,7 +45,7 @@
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "" + name;
+    const base = "https://madarez.github.io/" + name;
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.webp';
     const slides = document.querySelectorAll(".slide");
@@ -71,7 +71,7 @@
   }
 
   #ar-button {
-    background-image: url(ar-augmented-reality-icon.webp);
+    background-image: url(https://madarez.github.io/ar-augmented-reality-icon.webp);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
